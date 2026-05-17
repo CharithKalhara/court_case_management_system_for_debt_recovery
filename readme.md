@@ -49,11 +49,10 @@ After running this command:
 
 ---
 
-## 5. Install Docker Compose (v2 Plugin)
+## 5. Install Docker Compose
 
 ```bash
-sudo apt update
-sudo apt install docker-compose-plugin -y
+sudo apt install docker-compose
 ```
 
 ---
