@@ -5,12 +5,6 @@ RUN apt-get update && apt-get install -y libpq-dev \
 
 RUN a2enmod rewrite
 
-RUN echo '<FilesMatch "^\\.">' \
-    '\nRequire all denied' \
-    '\n</FilesMatch>' \
-    > /etc/apache2/conf-available/security.conf \
-    && a2enconf security
-
 WORKDIR /var/www/html
 
 COPY . /var/www/html/
