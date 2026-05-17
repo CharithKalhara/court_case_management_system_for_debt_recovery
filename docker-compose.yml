@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: nadu_app
+
+    ports:
+      - "80:80"
+
+    restart: always
+
+    env_file:
+      - .env

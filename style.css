@@ -1,0 +1,209 @@
+/* =========================
+   BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  padding: 20px;
+  color: #333;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h2 {
+  margin-bottom: 15px;
+}
+
+/* =========================
+   LINKS
+========================= */
+a {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   FORM
+========================= */
+form {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+input:focus {
+  border-color: #2563eb;
+  outline: none;
+}
+
+.nadu-form form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.nadu-form .form-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.nadu-form label {
+  width: 160px;
+  font-weight: 600;
+}
+
+.nadu-form input,
+.nadu-form select {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.nadu-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+.nadu-form button:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   TABLE
+========================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th {
+  background: #1e293b;
+  color: white;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+tr {
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background: #f1f5f9;
+}
+
+/* =========================
+   CARD STYLE (OPTIONAL)
+========================= */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 20px;
+}
+
+/* =========================
+   LOGIN PAGE CENTER
+========================= */
+body.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  width: 300px;
+}
+.status-bar {
+    display: flex;
+    justify-content: space-between;  /* left + right separation */
+    align-items: center;
+    background: #1e1e2f;
+    color: #00ffcc;
+    padding: 8px 15px;
+    font-family: monospace;
+    margin-bottom: 10px;
+}
+.error {
+    color: red;
+    background: #ffe5e5;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    text-align: center;
+}
+input, table, th, td, button {
+    font-family:'Nirmala UI', sans-serif;
+}
+select {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  font-size: 14px;
+  cursor: pointer;
+
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='gray'%3E%3Cpath d='M4 6l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+  padding-right: 30px;
+}
