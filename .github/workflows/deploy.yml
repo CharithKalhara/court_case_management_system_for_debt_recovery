@@ -1,0 +1,48 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to VPS
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.OCI_HOST }}
+          username: ${{ secrets.OCI_USER }}
+          key: ${{ secrets.OCI_PRIVATE_KEY }}
+          script: |
+            set -e
+
+            PROJECT_DIR="/home/ubuntu/nadu"
+            REPO_URL="git@github.com:CharithKalhara/nadu.git"
+
+            mkdir -p "$PROJECT_DIR"
+            cd "$PROJECT_DIR"
+
+            if [ ! -d ".git" ]; then
+              git clone "$REPO_URL" .
+            else
+              git pull origin main
+            fi
+
+            cat > .env <<EOF
+            DB_HOST=${{ secrets.HOST }}
+            DB_PORT=${{ secrets.PORT }}
+            DB_NAME=${{ secrets.DBNAME }}
+            DB_USER=${{ secrets.USER }}
+            DB_PASS=${{ secrets.PASSWORD }}
+            SUPABASE_URL=${{ secrets.SUPABASE_URL }}
+            SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
+
+
+            EOF
+
+            docker compose down || true
+            docker compose up --build -d
