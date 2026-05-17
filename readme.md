@@ -5,67 +5,99 @@ This guide helps you install Docker and Docker Compose on a Linux VM (Ubuntu rec
 ---
 
 ## Requirements
+
 - Ubuntu 20.04 / 22.04 VM
 - sudo access
 - Internet connection
 
 ---
 
-## Install Docker
+## 1. Update System
 
+```bash
 sudo apt update && sudo apt upgrade -y
-sudo apt install docker.io -y
+```
 
 ---
 
-## Start Docker
+## 2. Install Docker
 
+```bash
+sudo apt install docker.io -y
+```
+
+---
+
+## 3. Start Docker Service
+
+```bash
 sudo systemctl start docker
 sudo systemctl enable docker
+```
 
 ---
 
-## Add User Permission (IMPORTANT)
+## 4. Add User Permission (IMPORTANT)
 
+```bash
 sudo usermod -aG docker $USER
+```
 
-NOTE: logout and login again after this step
+After running this command:
+- Logout from SSH / terminal
+- Login again
 
 ---
 
-## Install Docker Compose (v2)
+## 5. Install Docker Compose (v2 Plugin)
 
+```bash
 sudo apt update
 sudo apt install docker-compose-plugin -y
+```
 
 ---
 
-## Check Docker Compose
+## 6. Check Docker Compose Version
 
+```bash
 docker compose version
+```
 
 ---
 
-## Run Project
+## 7. Run Your Project
 
+### Build and run:
+
+```bash
 docker compose up --build
+```
 
-Run in background:
+### Run in background (recommended):
 
+```bash
 docker compose up --build -d
+```
 
 ---
 
-## Stop Project
+## 8. Stop Project
 
+```bash
 docker compose down
+```
 
 ---
 
-## Main Command
+## 9. Most Important Command (Daily Use)
 
+```bash
 docker compose up --build -d
+```
 
 ---
 
-Done.
+## Done 
+
+Your Docker environment is now ready.
