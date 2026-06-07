@@ -6,7 +6,7 @@ services:
     container_name: nadu_app
 
     ports:
-      - "80:80"
+      - "8080:80"
 
     restart: always
 
